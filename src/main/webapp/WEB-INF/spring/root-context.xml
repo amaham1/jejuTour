@@ -29,7 +29,7 @@
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
 
-	<context:component-scan base-package="com.jj.jejuTour.Tour.dao">
+	<context:component-scan base-package="com.jj">
 	</context:component-scan>
 
 

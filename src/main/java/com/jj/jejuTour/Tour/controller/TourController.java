@@ -8,11 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import java.util.List;
 
-@RequestMapping("/cms")
 @Controller
 public class TourController {
 
@@ -21,16 +22,25 @@ public class TourController {
 	
 	private final Logger logger = LoggerFactory.getLogger(TourController.class);
 
-	@RequestMapping(value = "/getTourInfoList", method = RequestMethod.GET)
+	@RequestMapping(value = "/cms/getTourInfoList", method = RequestMethod.GET)
 	public String getTourInfoList(Model model) {
 
 		List<TourVo> tourInfoList = tourService.getTourInfoList();
 		
 		model.addAttribute("tourInfoList", tourInfoList );
-		
+		logger.info("ddddddddddddddddd");
 		return "tourInfoList";
 	}
 
+	@ResponseBody
+	@RequestMapping(value = "/cms/postTourInfo", method = RequestMethod.POST)
+	public ModelAndView postTourInfoWrite(ModelAndView modelAndView) {
 
+		modelAndView.setViewName("jsonView");
+		modelAndView.addObject("resultMessage", "SUCCESS");
+		modelAndView.addObject("resultCode", 200);
+
+		return modelAndView;
+	}
 	
 }
