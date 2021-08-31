@@ -1,6 +1,7 @@
 package com.jj.jejuTour.Tour.controller;
 
 import com.jj.jejuTour.Tour.service.TourService;
+import com.jj.jejuTour.Tour.vo.TourVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -9,25 +10,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RequestMapping("/cms")
 @Controller
-public class HomeController {
+public class TourController {
 
 	@Resource(name = "tourService")
 	private TourService tourService;
 	
-	private final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private final Logger logger = LoggerFactory.getLogger(TourController.class);
 
-	@RequestMapping(value = "/getTourInfo", method = RequestMethod.GET)
-	public String home(Model model) {
+	@RequestMapping(value = "/getTourInfoList", method = RequestMethod.GET)
+	public String getTourInfoList(Model model) {
 
-		tourService.getTourInfoList();
-		String helloWorld = "helloWorld";
+		List<TourVo> tourInfoList = tourService.getTourInfoList();
 		
-		model.addAttribute("serverTime", helloWorld );
+		model.addAttribute("tourInfoList", tourInfoList );
 		
-		return "home";
+		return "tourInfoList";
 	}
+
+
 	
 }

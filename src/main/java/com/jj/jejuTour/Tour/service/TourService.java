@@ -1,13 +1,13 @@
 package com.jj.jejuTour.Tour.service;
 
-import com.jj.jejuTour.Tour.controller.HomeController;
 import com.jj.jejuTour.Tour.dao.TourDao;
+import com.jj.jejuTour.Tour.vo.TourVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class TourService {
@@ -18,9 +18,8 @@ public class TourService {
     private TourDao tourDao;
 
 
-    public void getTourInfoList() {
+    public List<TourVo> getTourInfoList() {
 
-        logger.info("getTourInfoList" + tourDao.getTourInfo().getTour_place_name());
-
+        return tourDao.getTourInfo();
     }
 }

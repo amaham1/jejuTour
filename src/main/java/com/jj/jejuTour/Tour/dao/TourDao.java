@@ -3,8 +3,10 @@ package com.jj.jejuTour.Tour.dao;
 
 import com.jj.jejuTour.Tour.vo.TourVo;
 
+import java.util.List;
+
 public interface TourDao {
 
-    TourVo getTourInfo();
+    List<TourVo> getTourInfo();
 
 }

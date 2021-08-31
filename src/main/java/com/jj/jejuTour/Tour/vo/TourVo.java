@@ -5,6 +5,7 @@ public class TourVo {
     String tour_place_name;
     String tour_place_explanation;
     String create_dt;
+    int ROWNUM;
 
     public String getTour_place_name() {
         return tour_place_name;
@@ -28,5 +29,13 @@ public class TourVo {
 
     public void setCreate_dt(String create_dt) {
         this.create_dt = create_dt;
+    }
+
+    public int getROWNUM() {
+        return ROWNUM;
+    }
+
+    public void setROWNUM(int ROUNUM) {
+        this.ROWNUM = ROUNUM;
     }
 }

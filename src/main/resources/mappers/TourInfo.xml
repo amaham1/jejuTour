@@ -3,12 +3,14 @@
 
 <mapper namespace="TourInfo">
 
-    <select id="getTourInfo" resultType="com.jj.jejuTour.Tour.vo.TourVo">
+    <select id="getTourInfoList" resultType="com.jj.jejuTour.Tour.vo.TourVo">
         SELECT
-            tour_place_name
+            @ROWNUM := @ROWNUM + 1 AS ROWNUM
+             , tour_place_name
+             , DATE_FORMAT(create_dt, '%m-%d %H:%m') as create_dt
         FROM
-            tour_list
-        LIMIT 0,1
+            (SELECT @ROWNUM := 0 ) RNUM, tour_list
+        ORDER BY ROWNUM DESC
     </select>
 
 </mapper>

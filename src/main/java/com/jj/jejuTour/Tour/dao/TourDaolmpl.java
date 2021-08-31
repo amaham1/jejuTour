@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import javax.inject.Inject;
+import java.util.List;
 
 @Repository
 public class TourDaolmpl implements TourDao{
@@ -12,8 +13,8 @@ public class TourDaolmpl implements TourDao{
     @Inject
     private SqlSession sqlSession;
 
-    public TourVo getTourInfo() {
-        return sqlSession.selectOne("TourInfo.getTourInfo");
+    public List<TourVo> getTourInfo() {
+        return sqlSession.selectList("TourInfo.getTourInfoList");
 
     }
 }
