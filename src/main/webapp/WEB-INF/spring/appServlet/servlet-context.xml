@@ -30,14 +30,11 @@
 	<context:component-scan base-package="com.jj.*" />
 
 	<!-- jsonView -->
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" id="viewResolver" p:order="0"/>
 	<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" id="jsonView">
 		<property name="contentType" value="application/json;charset=UTF-8"/>
 	</bean>
-	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
-		<property name="order" value="1"/>
-	</bean>
-	<bean id="viewResolver"
-		  class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		  p:prefix="/WEB-INF/views/" p:suffix=".jsp" p:order="2"/>
+
+
 
 </beans>

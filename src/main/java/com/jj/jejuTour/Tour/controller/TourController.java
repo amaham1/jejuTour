@@ -30,21 +30,21 @@ public class TourController {
 		
 		model.addAttribute("tourInfoList", tourInfoList );
 		logger.info("getTourInfoList");
+
 		return "tour/tourInfoWrite";
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/cms/postTourInfo", method = RequestMethod.POST)
-	public void postTourInfoWrite(HttpServletRequest request, TourVo tourVo) {
+	@RequestMapping(value = "/cms/postTourInfo", method = RequestMethod.POST, produces = "application/json")
+	public ModelAndView postTourInfoWrite(HttpServletRequest request, TourVo tourVo, ModelAndView modelAndView) {
 
-		ModelAndView modelAndView = new ModelAndView("jsonView");
+		modelAndView.setViewName("jsonView");
 		modelAndView.addObject("resultMessage", "SUCCESS");
 		modelAndView.addObject("resultCode", 200);
 		logger.info("postTourInfo");
-		logger.info(tourVo.getTour_place_name());
 		logger.info(tourVo.getTour_place_explanation());
 
-		//return modelAndView;
+		return modelAndView;
 	}
 	
 }

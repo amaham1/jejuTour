@@ -7,7 +7,8 @@ $(document).ready(()=>{
             url: '/cms/postTourInfo',
             data: queryString,
             success: function(data){
-                if(data == true) {
+                if(data.resultCode === 200) {
+                    alert('처리에 성공하였습니다.')
                 } else {
                     alert('처리에 실패하였습니다.')
                 }
