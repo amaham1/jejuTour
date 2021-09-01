@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="RegisterMapper">
+<mapper namespace="AdminRegisterMapper">
 
-    <insert id="insertAdminRegister" parameterType="com.jj.jejuTour.Register.vo.RegisterVo">
+    <insert id="insertAdminRegister" parameterType="com.jj.jejuTour.AdminRegister.vo.AdminRegisterVo">
         INSERT INTO admin_info
         (
           admin_id
           , admin_pwd
           , admin_name
           , login_fail_count
+          , delete_yn
           , create_dt
         )
         VALUES
@@ -18,8 +19,17 @@
           , #{admin_pwd}
           , #{admin_name}
           , 0
+          , 'N'
           , NOW()
         )
     </insert>
+
+    <select id="selectAdminId" parameterType="string" resultType="int">
+        SELECT
+            COUNT(admin_id)
+        FROM
+            admin_info
+        WHERE admin_id = #{admin_id}
+    </select>
 
 </mapper>

@@ -1,7 +1,7 @@
-package com.jj.jejuTour.Register.vo;
+package com.jj.jejuTour.AdminRegister.vo;
 
 
-public class RegisterVo {
+public class AdminRegisterVo {
 
     private String admin_id;
     private String admin_pwd;
