@@ -11,8 +11,8 @@
 </head>
 <body>
     <form id="TourInfoWrite" name="TourInfoWrite" method="post">
-        <label for="tour_place_name"></label><input type="text" name="tour_place_name" id="tour_place_name" value="${tour_place_name}"/>
-        <input type="text" name="tour_place_explanation" id="tour_place_explanation" value="2"/>
+        <input type="text" name="tour_place_name" id="tour_place_name" />
+        <input type="text" name="tour_place_explanation" id="tour_place_explanation"/>
 
     </form>
     <button id="save">저장</button>
