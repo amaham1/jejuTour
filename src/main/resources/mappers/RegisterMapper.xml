@@ -9,6 +9,7 @@
           admin_id
           , admin_pwd
           , admin_name
+          , login_fail_count
           , create_dt
         )
         VALUES
@@ -16,6 +17,7 @@
           #{admin_id}
           , #{admin_pwd}
           , #{admin_name}
+          , 0
           , NOW()
         )
     </insert>

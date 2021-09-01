@@ -21,12 +21,14 @@ public class RegisterController {
     @Resource(name = "registerService")
     private RegisterService registerService;
 
+    //관리자 회원가입페이지
     @RequestMapping(value = "/cms/adminRegisterPage", method = RequestMethod.GET)
     public String getLoginRegisterPage() {
         logger.debug("====== /cms/adminRegisterPage =====");
         return "register/adminRegister";
     }
 
+    //관리자 회원가입
     @ResponseBody
     @RequestMapping(value = "/ajax/adminRegister", method = RequestMethod.POST)
     public ModelAndView postLoginRegister(ModelAndView modelAndView, RegisterVo registerVo) {
