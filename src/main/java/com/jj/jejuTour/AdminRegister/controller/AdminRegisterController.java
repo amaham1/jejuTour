@@ -54,6 +54,8 @@ public class AdminRegisterController {
     //관리자 id 유무체크
     @RequestMapping(value = "/ajax/adminIdDupleCheck", method = RequestMethod.POST)
     public ModelAndView postAdminIdDupleCheck(ModelAndView modelAndView, String admin_id) {
+        logger.debug("====== /ajax/adminIdDupleCheck =====");
+
         int var = adminRegisterService.selectAdminId(admin_id);
         if ( var == 0) {
             modelAndView.addObject("result", false);
