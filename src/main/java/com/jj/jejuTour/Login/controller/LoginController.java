@@ -36,7 +36,7 @@ public class LoginController {
             if (var > 0) {
                 return "redirect:/cms/getTourInfoList";
             } else {
-                return "redirect:/cms/login";
+                return "redirect:/cms/loginPage";
             }
         } else {
             //유저로그인 로직부분
