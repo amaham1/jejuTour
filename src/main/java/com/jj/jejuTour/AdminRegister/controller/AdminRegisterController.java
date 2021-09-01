@@ -34,11 +34,6 @@ public class AdminRegisterController {
         logger.debug("====== /ajax/adminRegister =====");
         modelAndView.setViewName("jsonView");
 
-        SHA512 sha512 = new SHA512();
-        String salt = sha512.Salt();
-        String sha512Pwd = sha512.SHA512(adminRegisterVo.getAdmin_pwd(), salt);
-        adminRegisterVo.setAdmin_pwd(sha512Pwd);
-
         int var = adminRegisterService.insertAdminRegister(adminRegisterVo);
         if (var > 0) {
             modelAndView.addObject("resultCode", 200);

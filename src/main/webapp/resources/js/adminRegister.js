@@ -1,7 +1,7 @@
 $(function (){
 
     $("#adminIdDupleCheck").click(function() {
-        const admin_id = $("input#admin_id").val();
+        const admin_id = $("input[name=admin_id]").val();
         if (admin_id === "" || admin_id === null) {
             alert("아이디를 입력해주세요")
         } else {
@@ -25,16 +25,16 @@ $(function (){
 
     //가입하기 버튼
     $("#adminRegister").click(function() {
-        const admin_id = $("input#admin_id").val();
-        const admin_name = $("input#admin_name").val();
-        const admin_pwd = $("input#admin_pwd").val();
+        const admin_id = $("input[name=admin_id]").val();
+        const admin_name = $("input[name=admin_name]").val();
+        const admin_pwd = $("input[name=admin_pwd]").val();
 
         if ( admin_id === '' || admin_id === null) {
             alert("아이디는 필수입니다")
+        } else if ( admin_pwd === '' || admin_pwd=== null ) {
+            alert("비밀번호는 필수입니다")
         } else if ( admin_name === '' || admin_name === null) {
             alert("이름은 필수입니다")
-        } else if ( admin_pwd === '' || admin_pwd=== null) {
-            alert("비밀번호는 필수입니다")
         } else {
             //ID 중복체크
             if ($("#adminIdDupleCheckFlag").val() === "pass"){

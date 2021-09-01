@@ -11,9 +11,9 @@
 <body>
     <input type="hidden" name="adminIdDupleCheckFlag" id="adminIdDupleCheckFlag" value="">
     <form id="adminRegisterForm" name="adminRegisterForm" method="post">
-        <input type="text" name="admin_id" id="admin_id" placeholder="아이디"> <button type="button" id="adminIdDupleCheck" >중복확인</button>
-        <input type="text" name="admin_name" id="admin_name" placeholder="이름">
-        <input type="text" name="admin_pwd" id="admin_pwd" placeholder="비밀번호">
+        <p>아아디: </p><input type="text" name="admin_id" id="admin_id" placeholder="아이디"> <button type="button" id="adminIdDupleCheck" >중복확인</button>
+        <p>비밀번호: </p><input type="text" name="admin_pwd" id="admin_pwd" placeholder="비밀번호">
+        <p>이름: </p><input type="text" name="admin_name" id="admin_name" placeholder="이름">
     </form>
     <button id="adminRegister">
         가입하기

@@ -10,6 +10,8 @@
           , admin_pwd
           , admin_name
           , login_fail_count
+          , delete_yn
+          , salt
           , create_dt
         )
         VALUES
@@ -18,6 +20,8 @@
           , #{admin_pwd}
           , #{admin_name}
           , 0
+          , 'N'
+          , #{salt}
           , NOW()
         )
     </insert>
