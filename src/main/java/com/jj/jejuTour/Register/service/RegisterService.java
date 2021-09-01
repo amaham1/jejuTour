@@ -15,6 +15,7 @@ public class RegisterService {
     @Autowired
     private RegisterDao registerDao;
     public int insertAdminRegister(RegisterVo registerVo){
+        logger.debug("====== insertAdminRegister =====");
         return registerDao.insertAdminRegister(registerVo);
     }
 }

@@ -10,9 +10,9 @@
 </head>
 <body>
     <form id="adminRegisterForm" name="adminRegisterForm" method="post">
-        <input type="text" name="admin_id" id="admin_id">
-        <input type="text" name="admin_pwd" id="admin_pwd">
-        <input type="text" name="admin_name" id="admin_name">
+        <input type="text" name="admin_id" id="admin_id" placeholder="아이디">
+        <input type="text" name="admin_name" id="admin_name" placeholder="이름">
+        <input type="text" name="admin_pwd" id="admin_pwd" placeholder="비밀번호">
     </form>
     <button id="adminRegister">
         가입하기
