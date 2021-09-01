@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -28,19 +29,22 @@ public class TourController {
 		List<TourVo> tourInfoList = tourService.getTourInfoList();
 		
 		model.addAttribute("tourInfoList", tourInfoList );
-		logger.info("ddddddddddddddddd");
-		return "tourInfoList";
+		logger.info("getTourInfoList");
+		return "tour/tourInfoWrite";
 	}
 
 	@ResponseBody
 	@RequestMapping(value = "/cms/postTourInfo", method = RequestMethod.POST)
-	public ModelAndView postTourInfoWrite(ModelAndView modelAndView) {
+	public void postTourInfoWrite(HttpServletRequest request, TourVo tourVo) {
 
-		modelAndView.setViewName("jsonView");
+		ModelAndView modelAndView = new ModelAndView("jsonView");
 		modelAndView.addObject("resultMessage", "SUCCESS");
 		modelAndView.addObject("resultCode", 200);
+		logger.info("postTourInfo");
+		logger.info(tourVo.getTour_place_name());
+		logger.info(tourVo.getTour_place_explanation());
 
-		return modelAndView;
+		//return modelAndView;
 	}
 	
 }
