@@ -19,5 +19,8 @@
     로그인
 </button>
 <button id="moveRegisterPage">회원가입</button>
+<div>
+    <p>${requestScope.loginFailMsg}</p>
+</div>
 </body>
 </html>
