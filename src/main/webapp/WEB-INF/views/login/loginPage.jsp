@@ -13,7 +13,7 @@
     <p>아아디: </p><input type="text" name="id" id="id" placeholder="아이디">
     <p>비밀번호: </p><input type="text" name="pwd" id="pwd" placeholder="비밀번호">
     <label for="userLogin">사용자</label><input type="radio" name="login_type" id="userLogin" value="userLogin">
-    <label for="adminLogin">관리자</label><input type="radio" name="login_type" id="adminLogin" value="adminLogin">
+    <label for="adminLogin">관리자</label><input type="radio" name="login_type" id="adminLogin" value="adminLogin" checked>
 </form>
 <button id="loginButton">
     로그인

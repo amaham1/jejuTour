@@ -29,7 +29,6 @@ public class TourController {
 		List<TourVo> tourInfoList = tourService.getTourInfoList();
 		
 		model.addAttribute("tourInfoList", tourInfoList );
-		logger.info("getTourInfoList");
 
 		return "tour/tourInfoWrite";
 	}

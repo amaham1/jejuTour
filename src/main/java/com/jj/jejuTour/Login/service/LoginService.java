@@ -18,12 +18,9 @@ public class LoginService {
     public int getAdminLogin(LoginVo loginVo) {
         SHA512 sha512 = new SHA512();
         String salt = loginDao.getSalt(loginVo.getId());
-        logger.debug("salt   " + salt);
         String sha512Pwd = sha512.SHA512(loginVo.getPwd(), salt);
         loginVo.setPwd(sha512Pwd);
 
-        int var = loginDao.getAdminLogin(loginVo);
-        logger.debug("var  " + var);
-        return var;
+        return loginDao.getAdminLogin(loginVo);
     }
 }

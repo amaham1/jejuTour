@@ -34,7 +34,7 @@ public class LoginController {
         if (loginType.equals("adminLogin")) {
             int var = loginService.getAdminLogin(loginVo);
             if (var > 0) {
-                return "redirect:/cms/getTourInfoList";
+                return "/tour/tourInfoList";
             } else {
                 return "redirect:/cms/loginPage";
             }
