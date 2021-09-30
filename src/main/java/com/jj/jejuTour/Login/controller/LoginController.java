@@ -16,15 +16,15 @@ public class LoginController {
 
     private final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
-    @Resource(name ="loginService")
+    @Resource(name ="LoginService")
     private LoginService loginService;
 
     @RequestMapping(value = "/cms/loginPage", method = RequestMethod.GET)
     public String LoginPage() {
         return "login/loginPage";
     }
-
-    @RequestMapping(value = "/cms/login", method = RequestMethod.POST)
+/*
+    @RequestMapping(value = "/cms/login", method = {RequestMethod.POST,RequestMethod.GET})
     public String getLogin(LoginVo loginVo) {
         logger.debug("===== getLogin =====");
 
@@ -43,5 +43,5 @@ public class LoginController {
         }
 
         return "";
-    }
+    }*/
 }

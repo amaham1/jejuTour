@@ -10,11 +10,12 @@
         WHERE admin_id = #{id}
     </select>
 
-    <select id="getAdminLogin" parameterType="com.jj.jejuTour.Login.vo.LoginVo" resultType="int">
+    <select id="getAdminLogin" parameterType="string" resultType="com.jj.jejuTour.Login.vo.LoginVo">
         SELECT
-            COUNT(create_dt)
+            admin_id AS id
+            , admin_pwd AS pwd
         FROM
             admin_info
-        WHERE admin_id = #{id} AND admin_pwd = #{pwd}
+        WHERE admin_id = #{id}
     </select>
 </mapper>

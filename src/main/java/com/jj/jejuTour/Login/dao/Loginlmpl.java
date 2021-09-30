@@ -12,8 +12,8 @@ public class Loginlmpl implements LoginDao{
     @Inject
     private SqlSession sqlSession;
 
-    public int getAdminLogin(LoginVo loginVo) {
-        return sqlSession.selectOne("LoginMapper.getAdminLogin" ,loginVo);
+    public LoginVo getAdminLogin(String id) {
+        return sqlSession.selectOne("LoginMapper.getAdminLogin" ,id);
     };
 
     public String getSalt(String id) {

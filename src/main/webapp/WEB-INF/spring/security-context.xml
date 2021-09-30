@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:s="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   https://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/security
+	   http://www.springframework.org/schema/security/spring-security.xsd">
+    <s:http pattern="/resources/**" security="none"/>
+
+    <s:http>
+        <s:intercept-url pattern="/cms/loginPage" access="hasAnyRole('ROLE_ANONYMOUS')" />
+
+
+        <s:form-login
+            login-page="/loginPage"
+            login-processing-url="/j_security_check"
+            default-target-url="/cms/getTourInfoList"
+            username-parameter="id"
+            password-parameter="pwd"
+            authentication-success-handler-ref="userLoginSuccessHandler"
+            authentication-success-forward-url="/cms/getTourInfoList"
+            authentication-failure-url="/"
+            authentication-failure-handler-ref="userLoginFailHandler"
+        />
+    </s:http>
+
+    <!-- DB 연동 설정 -->
+    <s:authentication-manager>
+        <s:authentication-provider ref="userLoginAuthenticationProvider">
+        </s:authentication-provider>
+    </s:authentication-manager>
+
+
+
+</beans>

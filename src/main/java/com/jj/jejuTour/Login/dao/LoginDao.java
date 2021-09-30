@@ -4,7 +4,7 @@ import com.jj.jejuTour.Login.vo.LoginVo;
 
 public interface LoginDao {
 
-    int getAdminLogin(LoginVo loginVo);
+    LoginVo getAdminLogin(String id);
 
     String getSalt(String id);
 }
