@@ -19,7 +19,7 @@ public class LoginController {
     @Resource(name ="LoginService")
     private LoginService loginService;
 
-    @RequestMapping(value = "/cms/loginPage", method = RequestMethod.GET)
+    @RequestMapping(value = "/loginPage", method = RequestMethod.GET)
     public String LoginPage() {
         return "login/loginPage";
     }

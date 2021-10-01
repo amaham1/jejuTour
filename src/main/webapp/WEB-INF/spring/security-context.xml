@@ -9,8 +9,8 @@
     <s:http pattern="/resources/**" security="none"/>
 
     <s:http>
-        <s:intercept-url pattern="/cms/loginPage" access="hasAnyRole('ROLE_ANONYMOUS')" />
-
+        <s:intercept-url pattern="/loginPage" access="permitAll()" />
+        <s:intercept-url pattern="/cms/**" access="hasAnyRole('USER')" />
 
         <s:form-login
             login-page="/loginPage"
@@ -20,7 +20,7 @@
             password-parameter="pwd"
             authentication-success-handler-ref="userLoginSuccessHandler"
             authentication-success-forward-url="/cms/getTourInfoList"
-            authentication-failure-url="/"
+            authentication-failure-url="/loginPage"
             authentication-failure-handler-ref="userLoginFailHandler"
         />
     </s:http>

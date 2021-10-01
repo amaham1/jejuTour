@@ -40,7 +40,7 @@ public class UserLoginFailHandler implements AuthenticationFailureHandler {
         }
 
         // 로그인 페이지로 다시 포워딩
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/cms/loginPage");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/loginPage");
         dispatcher.forward(request, response);
 
     }

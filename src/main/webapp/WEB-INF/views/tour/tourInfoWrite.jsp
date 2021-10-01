@@ -11,6 +11,7 @@
 </head>
 <body>
     <form id="TourInfoWrite" name="TourInfoWrite" method="post">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <input type="text" name="tour_place_name" id="tour_place_name" />
         <input type="text" name="tour_place_explanation" id="tour_place_explanation"/>
 
