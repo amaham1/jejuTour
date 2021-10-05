@@ -18,6 +18,11 @@
     <label for="userLogin">사용자</label><input type="radio" name="login_type" id="userLogin" value="userLogin">
     <label for="adminLogin">관리자</label><input type="radio" name="login_type" id="adminLogin" value="adminLogin" checked>
     <input type="submit" value="로그인">
+    <c:if test="${not empty loginFailMsg}">
+        <font color="red">
+            <p>${loginFailMsg}</p>
+        </font>
+    </c:if>
 </form>
 
 <button id="moveRegisterPage">회원가입</button>

@@ -2,6 +2,7 @@ package com.jj.jejuTour.Login.service;
 
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +38,8 @@ public class UserLoginFailHandler implements AuthenticationFailureHandler {
 
         } else if(exception instanceof CredentialsExpiredException) {
             request.setAttribute("loginFailMsg", "비밀번호가 만료되었습니다.");
+        } else if( exception instanceof UsernameNotFoundException) {
+            request.setAttribute("loginFailMsg", "아이디 또는 비밀번호를 확인해주세요");
         }
 
         // 로그인 페이지로 다시 포워딩

@@ -49,7 +49,7 @@ public class UserLoginAuthenticationProvider implements AuthenticationProvider {
         System.out.println("qqqqqqqqqqqq222222222 " + pwEncoding.matches(userPw, userDetails.getPassword()));
         if (userDetails == null ||  !pwEncoding.matches(userPw, userDetails.getPassword())) {
 
-            System.out.println("ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ");
+            throw new BadCredentialsException("");
 
             // 계정 정보 맞으면 나머지 부가 메소드 체크 (이부분도 필요한 부분만 커스터마이징 하면 됨)
             // 잠긴 계정일 경우

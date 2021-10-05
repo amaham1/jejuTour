@@ -19,29 +19,8 @@ public class LoginController {
     @Resource(name ="LoginService")
     private LoginService loginService;
 
-    @RequestMapping(value = "/loginPage", method = RequestMethod.GET)
+    @RequestMapping(value = "/loginPage", method = {RequestMethod.GET, RequestMethod.POST})
     public String LoginPage() {
         return "login/loginPage";
     }
-/*
-    @RequestMapping(value = "/cms/login", method = {RequestMethod.POST,RequestMethod.GET})
-    public String getLogin(LoginVo loginVo) {
-        logger.debug("===== getLogin =====");
-
-        String loginType = loginVo.getLogin_type();
-        logger.debug("loginType "+loginType);
-
-        if (loginType.equals("adminLogin")) {
-            int var = loginService.getAdminLogin(loginVo);
-            if (var > 0) {
-                return "/tour/tourInfoList";
-            } else {
-                return "redirect:/cms/loginPage";
-            }
-        } else {
-            //유저로그인 로직부분
-        }
-
-        return "";
-    }*/
 }
