@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<decorators defaultdir="/WEB-INF/views/decorators">
+
+    <excludes>
+        <pattern>/login/*</pattern>
+    </excludes>
+
+    <decorator name="popup" page="header.jsp"/>
+    <decorator name="printable" page="sidebar.jsp"/>
+    <decorator name="default" page="mainLayout.jsp">
+        <pattern>/cms/*</pattern>
+    </decorator>
+
+
+
+</decorators>

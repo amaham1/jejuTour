@@ -15,11 +15,11 @@
         <s:form-login
             login-page="/loginPage"
             login-processing-url="/j_security_check"
-            default-target-url="/cms/getTourInfoList"
+            default-target-url="/cms/TourInfoList"
             username-parameter="id"
             password-parameter="pwd"
             authentication-success-handler-ref="userLoginSuccessHandler"
-            authentication-success-forward-url="/cms/getTourInfoList"
+            authentication-success-forward-url="/cms/TourInfoList"
             authentication-failure-url="/loginPage"
             authentication-failure-handler-ref="userLoginFailHandler"
         />

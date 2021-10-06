@@ -23,11 +23,21 @@ public class TourController {
 	
 	private final Logger logger = LoggerFactory.getLogger(TourController.class);
 
-	@RequestMapping(value = "/cms/getTourInfoList", method = RequestMethod.GET)
-	public String getTourInfoList(Model model) {
+	@RequestMapping(value = "/cms/tourInfoList", method = RequestMethod.GET)
+	public String tourInfoList(Model model) {
 
 		List<TourVo> tourInfoList = tourService.getTourInfoList();
 		
+		model.addAttribute("tourInfoList", tourInfoList );
+
+		return "tour/tourInfoList";
+	}
+
+	@RequestMapping(value = "/cms/tourInfoWrite", method = RequestMethod.GET)
+	public String tourInfoWrite(Model model) {
+
+		List<TourVo> tourInfoList = tourService.getTourInfoList();
+
 		model.addAttribute("tourInfoList", tourInfoList );
 
 		return "tour/tourInfoWrite";
