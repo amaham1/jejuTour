@@ -23,6 +23,11 @@ public class TourController {
 	
 	private final Logger logger = LoggerFactory.getLogger(TourController.class);
 
+	@RequestMapping(value = "/cms/tourInfo", method = RequestMethod.GET)
+	public String tourInfo(Model model) {
+		return "tour/tourInfo";
+	}
+
 	@RequestMapping(value = "/cms/tourInfoList", method = RequestMethod.GET)
 	public String tourInfoList(Model model) {
 
