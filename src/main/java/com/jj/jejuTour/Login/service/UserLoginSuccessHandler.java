@@ -35,6 +35,6 @@ public class UserLoginSuccessHandler implements AuthenticationSuccessHandler {
         }
         System.out.println();
 
-        response.sendRedirect("/cms/home");
+        response.sendRedirect("/cms/tourInfoList");
     }
 }

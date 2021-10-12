@@ -6,8 +6,10 @@
 <html>
     <head>
         <script type="text/javascript" src="<c:url value='/resources/js/plugins/jquery-3.5.1.min.js'/>"></script>
-        <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/plugins/datatables.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.css"/>
+        <script src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
         <script type="text/javascript" src="<c:url value='//dapi.kakao.com/v2/maps/sdk.js?appkey=73cd49d3c8df14c99e4a9a532f19c52a'/>"></script>
+
         <title><decorator:title /> 제주조아 </title>
         <decorator:head />
     </head>

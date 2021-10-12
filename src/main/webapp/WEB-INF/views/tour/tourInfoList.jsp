@@ -1,12 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
+<head>
+	<meta charset="UTF-8">
+	<script>
+		$(document).ready(function () {
+			$("#d_table").DataTable();
+		});
+	</script>
+	<title></title>
+</head>
 <body>
 <h1>
 	Hello world!  
 </h1>
 <section>
-	<table border="1">
+	<table style="border: 1px" id="d_table">
 		<colgroup>
 			<col style="width:55px">
 			<col>
