@@ -13,6 +13,6 @@ public class HomeController {
 
     @RequestMapping(value = "/cms/home")
     public String getHome() {
-        return "decorators/mainLayout";
+        return "decorators/homePage";
     }
 }

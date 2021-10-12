@@ -8,10 +8,9 @@
    <div class="cnt_inner">
       <section style="position:relative;">
          <div style="position:relative; height: 50px; display: flex;">
-
-
-         <h2 style="height: 45px; line-height: 2.813rem; color: #009fe3; font-size: 1rem; margin-top: 20px;">목록</h2>
-
+            <h2 style="height: 45px; line-height: 2.813rem; color: #009fe3; font-size: 1rem; margin-top: 20px;">목록</h2>
+         </div>
+      </section>
    </div>
 </section>
 
