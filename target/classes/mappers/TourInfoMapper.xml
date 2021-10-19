@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="TourInfo">
+
+    <select id="getTourInfoList" resultType="com.jj.jejuTour.Tour.vo.TourVo">
+        SELECT
+            @ROWNUM := @ROWNUM + 1 AS ROWNUM
+             , tour_place_name
+             , DATE_FORMAT(create_dt, '%m-%d %H:%m') as create_dt
+        FROM
+            (SELECT @ROWNUM := 0 ) RNUM, tour_list
+        ORDER BY ROWNUM DESC
+    </select>
+
+</mapper>

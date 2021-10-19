@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import util.NormalUtil;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +26,8 @@ public class TourController {
 
 	@RequestMapping(value = "/cms/tourInfo", method = RequestMethod.GET)
 	public String tourInfo(Model model) {
+		NormalUtil normalUtil = new NormalUtil();
+		normalUtil.getJson();
 		return "tour/tourInfo";
 	}
 

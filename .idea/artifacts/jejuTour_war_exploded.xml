@@ -6,6 +6,7 @@
         <exploded>true</exploded>
         <module>jejuTour</module>
         <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
@@ -50,6 +51,8 @@
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.6.4" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.6.4" />
           <element id="library" level="project" name="Maven: opensymphony:sitemesh:2.4.2" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.7" />
+          <element id="library" level="project" name="Maven: org.json:json:20180813" />
         </element>
       </element>
       <element id="directory" name="META-INF">
