@@ -8,15 +8,20 @@ public class TourVo {
     int ROWNUM;
 
     String alltag;
-    String label;
+    String contentscd;
     String title;
-    String roadaddress;
+    String region1cd;
+    String address;
     String introduction;
     String latitude;
     String longitude;
     String phoneno;
     String imgpath;
     String thumbnailpath;
+
+
+
+
 
 
     public String getTour_place_name() {
@@ -59,12 +64,12 @@ public class TourVo {
         this.alltag = alltag;
     }
 
-    public String getLabel() {
-        return label;
+    public String getContentscd() {
+        return contentscd;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
+    public void setContentscd(String contentscd) {
+        this.contentscd = contentscd;
     }
 
     public String getTitle() {
@@ -75,12 +80,20 @@ public class TourVo {
         this.title = title;
     }
 
-    public String getRoadaddress() {
-        return roadaddress;
+    public String getRegion1cd() {
+        return region1cd;
     }
 
-    public void setRoadaddress(String roadaddress) {
-        this.roadaddress = roadaddress;
+    public void setRegion1cd(String region1cd) {
+        this.region1cd = region1cd;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getIntroduction() {
