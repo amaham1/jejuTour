@@ -4,6 +4,7 @@ import com.jj.jejuTour.util.NormalUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -16,7 +17,9 @@ public class Scheduler {
     @Resource(name = "normalUtil")
     private NormalUtil normalUtil;
 
-    public int tourPlaceInsertJsonScheduler () {
-        return normalUtil.getVisitJejuJson();
+    @Scheduled(cron = "0 0 6 * * *?") //매일 오전 6시
+    public void tourPlaceInsertJsonScheduler () {
+        logger.debug("===== Scheduler tourPlaceInsertJsonScheduler RUN=====");
+        normalUtil.getVisitJejuJson();
     }
 }

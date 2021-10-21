@@ -46,24 +46,22 @@
             , #{item.thumbnailpath}
             , NOW()
             , 'N'
-
         )
         </foreach>
         ON DUPLICATE KEY
         UPDATE
             alltag = values(alltag)
-        ,   contentscd = values(contentscd)
-        ,   title= values(title)
-        ,   region1cd = values(region1cd)
-        ,   address = values(address)
-        ,   introduction = values(introduction)
-        ,   latitude = values(latitude)
-        ,   longitude = values(longitude)
-        ,   phoneno = values(phoneno)
-        ,   imgpath = values(imgpath)
-        ,   thumbnailpath= values(thumbnailpath)
-        ,   update_dt = NOW()
-        ,   delete_yn = 'N'
+            , contentscd = values(contentscd)
+            , title = values(title)
+            , region1cd = values(region1cd)
+            , address = values(address)
+            , introduction = values(introduction)
+            , latitude = values(latitude)
+            , longitude = values(longitude)
+            , phoneno = values(phoneno)
+            , imgpath = values(imgpath)
+            , thumbnailpath = values(thumbnailpath)
+            , update_dt = NOW()
     </insert>
 
 </mapper>
