@@ -18,18 +18,14 @@ import java.util.List;
 
 @Controller
 public class TourController {
+	private final Logger logger = LoggerFactory.getLogger(TourController.class);
 
 	@Resource(name = "tourService")
 	private TourService tourService;
 
-	@Resource(name = "normalUtil")
-	private NormalUtil normalUtil;
-	
-	private final Logger logger = LoggerFactory.getLogger(TourController.class);
 
 	@RequestMapping(value = "/cms/tourInfo", method = RequestMethod.GET)
 	public String tourInfo(Model model) {
-		normalUtil.getVisitJejuJson();
 		return "tour/tourInfo";
 	}
 

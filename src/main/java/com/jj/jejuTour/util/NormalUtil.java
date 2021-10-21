@@ -3,8 +3,11 @@ package com.jj.jejuTour.util;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.jj.jejuTour.AdminRegister.service.AdminRegisterService;
 import com.jj.jejuTour.Tour.dao.TourDao;
 import com.jj.jejuTour.Tour.vo.TourVo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,13 +20,16 @@ import java.util.List;
 
 @Service
 public class NormalUtil {
+    private final Logger logger = LoggerFactory.getLogger(NormalUtil.class);
 
     @Autowired
     private TourDao tourDao;
 
     HttpURLConnection conn;
 
-    public void getVisitJejuJson() {
+    public int getVisitJejuJson() {
+        logger.debug("====getVisitJejuJson====");
+        int returnValue = 0;
 
         try {
             URL url = new URL("https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=w7ajt3gnrtev7nbe&locale=kr&cid=CONT_000000000500349");
@@ -113,11 +119,14 @@ public class NormalUtil {
 
                         tourVoList.add(tourVo);
                     }
-                    int aa = tourDao.insertVisitJejuJson(tourVoList);
+                    returnValue = tourDao.insertVisitJejuJson(tourVoList);
+                    logger.debug("====getVisitJejuJson====" + returnValue);
                 }
             }
+            logger.debug("///getVisitJejuJson///");
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return returnValue;
     }
 }
