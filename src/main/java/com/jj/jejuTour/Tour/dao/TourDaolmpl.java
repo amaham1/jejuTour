@@ -15,6 +15,9 @@ public class TourDaolmpl implements TourDao{
 
     public List<TourVo> getTourInfo() {
         return sqlSession.selectList("TourInfo.getTourInfoList");
+    }
 
+    public int insertVisitJejuJson(List<TourVo> tourVo) {
+        return sqlSession.insert("TourInfo.insertVisitJejuJson", tourVo);
     }
 }

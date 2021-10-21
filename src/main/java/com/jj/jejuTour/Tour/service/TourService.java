@@ -17,9 +17,7 @@ public class TourService {
     @Autowired
     private TourDao tourDao;
 
-
     public List<TourVo> getTourInfoList() {
-
         return tourDao.getTourInfo();
     }
 }

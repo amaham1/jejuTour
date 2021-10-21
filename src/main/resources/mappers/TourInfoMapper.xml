@@ -13,4 +13,57 @@
         ORDER BY ROWNUM DESC
     </select>
 
+    <insert id="insertVisitJejuJson" parameterType="com.jj.jejuTour.Tour.vo.TourVo">
+        INSERT INTO tour_place_info
+        (
+            alltag
+            , contentscd
+            , title
+            , region1cd
+            , address
+            , introduction
+            , latitude
+            , longitude
+            , phoneno
+            , imgpath
+            , thumbnailpath
+            , create_dt
+            , delete_yn
+        )
+        VALUES
+        <foreach collection="list" index="index" item="item" separator=",">
+        (
+            #{item.alltag}
+            , #{item.contentscd}
+            , #{item.title}
+            , #{item.region1cd}
+            , #{item.address}
+            , #{item.introduction}
+            , #{item.latitude}
+            , #{item.longitude}
+            , #{item.phoneno}
+            , #{item.imgpath}
+            , #{item.thumbnailpath}
+            , NOW()
+            , 'N'
+
+        )
+        </foreach>
+        ON DUPLICATE KEY
+        UPDATE
+            alltag = values(alltag)
+        ,   contentscd = values(contentscd)
+        ,   title= values(title)
+        ,   region1cd = values(region1cd)
+        ,   address = values(address)
+        ,   introduction = values(introduction)
+        ,   latitude = values(latitude)
+        ,   longitude = values(longitude)
+        ,   phoneno = values(phoneno)
+        ,   imgpath = values(imgpath)
+        ,   thumbnailpath= values(thumbnailpath)
+        ,   update_dt = NOW()
+        ,   delete_yn = 'N'
+    </insert>
+
 </mapper>

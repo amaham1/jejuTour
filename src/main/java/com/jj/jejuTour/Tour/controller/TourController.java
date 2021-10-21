@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import util.NormalUtil;
+import com.jj.jejuTour.util.NormalUtil;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -21,13 +21,15 @@ public class TourController {
 
 	@Resource(name = "tourService")
 	private TourService tourService;
+
+	@Resource(name = "normalUtil")
+	private NormalUtil normalUtil;
 	
 	private final Logger logger = LoggerFactory.getLogger(TourController.class);
 
 	@RequestMapping(value = "/cms/tourInfo", method = RequestMethod.GET)
 	public String tourInfo(Model model) {
-		NormalUtil normalUtil = new NormalUtil();
-		normalUtil.getJson();
+		normalUtil.getVisitJejuJson();
 		return "tour/tourInfo";
 	}
 
