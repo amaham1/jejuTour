@@ -13,7 +13,7 @@ public class TourDaolmpl implements TourDao{
     @Inject
     private SqlSession sqlSession;
 
-    public List<TourVo> getTourInfo() {
+    public List<TourVo> getTourInfoList() {
         return sqlSession.selectList("TourInfo.getTourInfoList");
     }
 

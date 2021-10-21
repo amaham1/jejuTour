@@ -6,10 +6,19 @@
     <select id="getTourInfoList" resultType="com.jj.jejuTour.Tour.vo.TourVo">
         SELECT
             @ROWNUM := @ROWNUM + 1 AS ROWNUM
-             , tour_place_name
-             , DATE_FORMAT(create_dt, '%m-%d %H:%m') as create_dt
+             , alltag
+             , contentscd
+             , title
+             , region1cd
+             , address
+             , introduction
+             , phoneno
+             , DATE_FORMAT(create_dt, '%Y-%m-%d %H:%m') as create_dt
+             , DATE_FORMAT(update_dt, '%Y-%m-%d $H:%m') as update_dt
         FROM
-            (SELECT @ROWNUM := 0 ) RNUM, tour_list
+            (SELECT @ROWNUM := 0 ) RNUM, tour_place_info
+        WHERE
+            delete_yn = 'N'
         ORDER BY ROWNUM DESC
     </select>
 

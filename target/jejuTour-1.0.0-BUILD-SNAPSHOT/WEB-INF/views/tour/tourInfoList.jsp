@@ -15,24 +15,37 @@
 	Hello world!  
 </h1>
 <section>
-	<table style="border: 1px" id="d_table">
+	<table style="border: 1px solid #ebebeb; width: 100%; border-bottom: 0" id="d_table" >
 		<colgroup>
-			<col style="width:55px">
+			<col style="width:100px">
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
 			<col>
 		</colgroup>
 		<thead>
 			<tr>
-				<th>Rownum</th>
-				<th>Tour name</th>
-				<th>Create dt</th>
+				<th style="width:100px">Rownum</th>
+				<th style="width:100px">관광지</th>
+				<th>주소</th>
+				<th>소개</th>
+				<th>전화번호</th>
+				<th>생성 날짜</th>
+				<th>업데이트 날짜</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="TourList" items="${tourInfoList}">
 				<tr>
 					<td>${TourList.ROWNUM}</td>
-					<td>${TourList.tour_place_name}</td>
+					<td>${TourList.title}</td>
+					<td>${TourList.address}</td>
+					<td>${TourList.introduction}</td>
+					<td>${TourList.phoneno}</td>
 					<td>${TourList.create_dt}</td>
+					<td>${TourList.update_dt}</td>
 				</tr>
 			</c:forEach>
 		</tbody>

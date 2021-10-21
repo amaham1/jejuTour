@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface TourDao {
 
-    List<TourVo> getTourInfo();
+    List<TourVo> getTourInfoList();
 
     public int insertVisitJejuJson(List<TourVo> tourVo);
 

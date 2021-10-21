@@ -5,6 +5,7 @@ public class TourVo {
     String tour_place_name;
     String tour_place_explanation;
     String create_dt;
+    String update_dt;
     int ROWNUM;
 
     String alltag;
@@ -46,6 +47,14 @@ public class TourVo {
 
     public void setCreate_dt(String create_dt) {
         this.create_dt = create_dt;
+    }
+
+    public String getUpdate_dt() {
+        return update_dt;
+    }
+
+    public void setUpdate_dt(String update_dt) {
+        this.update_dt = update_dt;
     }
 
     public int getROWNUM() {
