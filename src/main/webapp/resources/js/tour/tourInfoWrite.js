@@ -1,6 +1,7 @@
 $(document).ready(()=>{
 
     $("#save").click(function(){
+        console.log("ㄱㄱ")
         var queryString = $("#TourInfoWrite").serialize();
         $.ajax({
             type: 'POST',

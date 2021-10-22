@@ -1,7 +1,5 @@
 package com.jj.jejuTour.Tour.vo;
 
-import java.util.List;
-
 public class TourVo {
 
     String tour_place_name;
@@ -21,15 +19,11 @@ public class TourVo {
     String phoneno;
     String imgpath;
     String thumbnailpath;
-    List<?> data;
 
-    public List<?> getData() {
-        return data;
-    }
 
-    public void setData(List<?> data) {
-        this.data = data;
-    }
+
+
+
 
     public String getTour_place_name() {
         return tour_place_name;

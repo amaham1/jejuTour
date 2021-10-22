@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Field;
 import java.util.List;
 
 @Controller
@@ -32,21 +31,11 @@ public class TourController {
 	@RequestMapping(value = "/cms/tourInfoList", method = RequestMethod.GET)
 	public String tourInfoList(Model model) {
 
-		//List<TourVo> tourInfoList = tourService.getTourInfoList();
-		//model.addAttribute("tourInfoList", tourInfoList );
+		List<TourVo> tourInfoList = tourService.getTourInfoList();
+		
+		model.addAttribute("tourInfoList", tourInfoList );
 
 		return "tour/tourInfoList";
-	}
-
-	@ResponseBody
-	@RequestMapping(value = "/ajax/tourInfoList", method = RequestMethod.POST)
-	public TourVo ajaxTourInfoList(Model model) {
-
-		List<TourVo> tourInfoList = tourService.getTourInfoList();
-		TourVo tourVo = new TourVo();
-		tourVo.setData(tourInfoList);
-
-		return tourVo;
 	}
 
 	@RequestMapping(value = "/cms/tourInfoWrite", method = RequestMethod.GET)
@@ -61,7 +50,7 @@ public class TourController {
 
 	@ResponseBody
 	@RequestMapping(value = "/cms/postTourInfo", method = RequestMethod.POST, produces = "application/json")
-	public ModelAndView postTourInfoWrite(TourVo tourVo, ModelAndView modelAndView) {
+	public ModelAndView postTourInfoWrite(HttpServletRequest request, TourVo tourVo, ModelAndView modelAndView) {
 
 		modelAndView.setViewName("jsonView");
 		modelAndView.addObject("resultMessage", "SUCCESS");
