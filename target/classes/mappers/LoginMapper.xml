@@ -10,7 +10,7 @@
         WHERE admin_id = #{id}
     </select>
 
-    <select id="getAdminLogin" parameterType="string" resultType="com.jj.jejuTour.Login.vo.LoginVo">
+    <select id="getAdminLogin" parameterType="string" resultType="com.jj.jejuTour.login.vo.LoginVo">
         SELECT
             admin_id AS id
             , admin_pwd AS pwd

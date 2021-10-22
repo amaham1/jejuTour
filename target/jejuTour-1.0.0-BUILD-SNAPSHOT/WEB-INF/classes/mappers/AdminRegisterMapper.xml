@@ -3,7 +3,7 @@
 
 <mapper namespace="AdminRegisterMapper">
 
-    <insert id="insertAdminRegister" parameterType="com.jj.jejuTour.AdminRegister.vo.AdminRegisterVo">
+    <insert id="insertAdminRegister" parameterType="com.jj.jejuTour.adminRegister.vo.AdminRegisterVo">
         INSERT INTO admin_info
         (
           admin_id

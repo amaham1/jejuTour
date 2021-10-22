@@ -21,15 +21,13 @@ $(document).ready(function () {
         , "lengthMenu" : [ [10, 20, 30], [10, 20, 30] ]
         , "order" : [[ 0, "desc" ]]
         , "searching" : false
-        , ajax : {
+        , "ajax" : {
             url: "./ajax/tourInfoList"
             , type: "POST"
             , beforeSend: function(xhr){
-                    xhr.setRequestHeader(header, token);
-                console.log("hhhhhi");}
-            , data : function (res) {
-
-                console.log(res)
+                    xhr.setRequestHeader(header, token);}
+            , dataSrc : function(res) {
+                return res.data;
             }
         }
         , "columns" : [

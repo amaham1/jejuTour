@@ -35,7 +35,7 @@
 				</tr>
 			</thead>
 			<tbody>
-			<%-- JS 안타고 바로 이용할때
+			<%-- JS 안타고 ajax로 바로 이용할때
 				<c:forEach var="TourList" items="${tourInfoList}">
 					<tr>
 						<td>${TourList.ROWNUM}</td>

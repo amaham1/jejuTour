@@ -3,7 +3,7 @@
 
 <mapper namespace="TourInfo">
 
-    <select id="getTourInfoList" resultType="com.jj.jejuTour.Tour.vo.TourVo">
+    <select id="getTourInfoList" resultType="com.jj.jejuTour.tour.vo.TourVo">
         SELECT
             @ROWNUM := @ROWNUM + 1 AS ROWNUM
              , alltag
@@ -19,10 +19,19 @@
             (SELECT @ROWNUM := 0 ) RNUM, tour_place_info
         WHERE
             delete_yn = 'N'
-        ORDER BY ROWNUM DESC
+        ORDER BY create_dt ASC
+        LIMIT #{start} , #{length}
+    </select>
+    <select id="getTourInfoListCount" resultType="int">
+        SELECT
+            COUNT(title)
+        FROM
+            tour_place_info
+        WHERE
+            delete_yn = 'N'
     </select>
 
-    <insert id="insertVisitJejuJson" parameterType="com.jj.jejuTour.Tour.vo.TourVo">
+    <insert id="insertVisitJejuJson" parameterType="com.jj.jejuTour.tour.vo.TourVo">
         INSERT INTO tour_place_info
         (
             alltag
