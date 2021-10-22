@@ -15,7 +15,7 @@
 	Hello world!  
 </h1>
 <section>
-	<table style="border: 1px solid #ebebeb; width: 100%; border-bottom: 0" id="d_table" >
+	<table style="border: 1px solid #ebebeb;">
 		<colgroup>
 			<col style="width:100px">
 			<col>
@@ -51,7 +51,6 @@
 		</tbody>
 	</table>
 </section>
-
 
 </body>
 </html>

@@ -25,7 +25,7 @@
             <div style="position: relative; left: 50%;">
                 <%@ include file="sidebar.jsp" %>
             </div>
-            <div style="width:200px; height:100%;">
+            <div style="height:100%;">
                 <decorator:body />
             </div>
         </div>
