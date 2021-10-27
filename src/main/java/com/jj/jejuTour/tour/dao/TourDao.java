@@ -12,4 +12,6 @@ public interface TourDao {
     int insertVisitJejuJson(List<TourVo> tourVo);
 
     int getTourInfoListCount();
+
+    int insertTourPlaceInfo(TourVo tourVo);
 }

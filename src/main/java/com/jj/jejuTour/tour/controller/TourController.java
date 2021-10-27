@@ -88,6 +88,8 @@ public class TourController {
 		logger.info(tourVo.getImgpath());
 		logger.info(tourVo.getThumbnailpath());
 
+		int result = tourService.insertTourPlaceInfo(tourVo);
+
 		return modelAndView;
 	}
 	

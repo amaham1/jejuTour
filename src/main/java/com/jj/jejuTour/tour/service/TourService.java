@@ -21,6 +21,8 @@ public class TourService {
         return tourDao.getTourInfoList(tourVo);
     }
     public int getTourInfoListCount() {
-        return tourDao.getTourInfoListCount();
+        return tourDao.getTourInfoListCount(); }
+    public int insertTourPlaceInfo(TourVo tourVo) {
+        return tourDao.insertTourPlaceInfo(tourVo);
     }
 }

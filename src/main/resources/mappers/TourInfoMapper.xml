@@ -31,7 +31,7 @@
             delete_yn = 'N'
     </select>
 
-    <insert id="insertVisitJejuJson" parameterType="com.jj.jejuTour.tour.vo.TourVo">
+    <insert id="insertTourPlaceInfo" parameterType="com.jj.jejuTour.tour.vo.TourVo">
         INSERT INTO tour_place_info
         (
             alltag
@@ -49,23 +49,21 @@
             , delete_yn
         )
         VALUES
-        <foreach collection="list" index="index" item="item" separator=",">
         (
-            #{item.alltag}
-            , #{item.contentscd}
-            , #{item.title}
-            , #{item.region1cd}
-            , #{item.address}
-            , #{item.introduction}
-            , #{item.latitude}
-            , #{item.longitude}
-            , #{item.phoneno}
-            , #{item.imgpath}
-            , #{item.thumbnailpath}
+            #{alltag}
+            , #{contentscd}
+            , #{title}
+            , #{region1cd}
+            , #{address}
+            , #{introduction}
+            , #{latitude}
+            , #{longitude}
+            , #{phoneno}
+            , #{imgpath}
+            , #{thumbnailpath}
             , NOW()
             , 'N'
         )
-        </foreach>
         ON DUPLICATE KEY
         UPDATE
             alltag = values(alltag)
@@ -81,5 +79,7 @@
             , thumbnailpath = values(thumbnailpath)
             , update_dt = NOW()
     </insert>
+
+
 
 </mapper>
