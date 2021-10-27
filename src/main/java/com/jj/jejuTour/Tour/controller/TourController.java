@@ -56,8 +56,17 @@ public class TourController {
 		modelAndView.addObject("resultMessage", "SUCCESS");
 		modelAndView.addObject("resultCode", 200);
 		logger.info("postTourInfo");
-		logger.info(tourVo.getTour_place_name());
-		logger.info(tourVo.getTour_place_explanation());
+		logger.info(tourVo.getAlltag());
+		logger.info(tourVo.getContentscd());
+		logger.info(tourVo.getTitle());
+		logger.info(tourVo.getRegion1cd());
+		logger.info(tourVo.getAddress());
+		logger.info(tourVo.getIntroduction());
+		logger.info(tourVo.getLatitude());
+		logger.info(tourVo.getLongitude());
+		logger.info(tourVo.getPhoneno());
+		logger.info(tourVo.getImgpath());
+		logger.info(tourVo.getThumbnailpath());
 
 		return modelAndView;
 	}

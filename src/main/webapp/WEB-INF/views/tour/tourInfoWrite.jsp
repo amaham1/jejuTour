@@ -11,8 +11,18 @@
 <body>
     <form id="TourInfoWrite" name="TourInfoWrite" method="post">
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        <input type="text" name="tour_place_name" id="tour_place_name" />
-        <input type="text" name="tour_place_explanation" id="tour_place_explanation"/>
+
+        <input type="text" name="alltag" id="alltag" /><p>alltag</p>
+        <input type="text" name="contentscd" id="contentscd"/><p>contentscd</p>
+        <input type="text" name="title" id="title" /><p>title</p>
+        <input type="text" name="region1cd" id="region1cd"/><p>region1cd</p>
+        <input type="text" name="address" id="address" /><p>address</p>
+        <input type="text" name="introduction" id="introduction"/><p>introduction</p>
+        <input type="text" name="latitude" id="latitude" /><p>latitude</p>
+        <input type="text" name="longitude" id="longitude"/><p>longitude</p>
+        <input type="text" name="phoneno" id="phoneno" /><p>phoneno</p>
+        <input type="text" name="imgpath" id="imgpath"/><p>imgpath</p>
+        <input type="text" name="thumbnailpath" id="thumbnailpath" /><p>thumbnailpath</p>
     </form>
     <button id="save">저장</button>
 </body>
