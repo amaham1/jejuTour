@@ -5,6 +5,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="_csrf_parameter" content="${_csrf.parameterName}" />
+        <meta name="_csrf_header" content="${_csrf.headerName}" />
+        <meta name="_csrf" content="${_csrf.token}" />
         <script type="text/javascript" src="<c:url value='/resources/js/plugins/jquery-3.5.1.min.js'/>"></script>
         <link rel="stylesheet" href="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.css"/>
         <script src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
@@ -25,7 +28,7 @@
             <div style="position: relative; left: 50%;">
                 <%@ include file="sidebar.jsp" %>
             </div>
-            <div style="width:200px; height:100%;">
+            <div style="height:100%;">
                 <decorator:body />
             </div>
         </div>

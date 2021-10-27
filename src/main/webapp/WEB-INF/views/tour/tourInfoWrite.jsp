@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
-
     <script type="text/javascript" src="<c:url value='/resources/js/tour/tourInfoWrite.js'/>"></script>
 </head>
 <body>

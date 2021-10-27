@@ -1,11 +1,9 @@
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.JsonPrimitive;
-import com.jj.jejuTour.Tour.vo.TourVo;
+import com.jj.jejuTour.tour.vo.TourVo;
 import junit.framework.TestCase;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 

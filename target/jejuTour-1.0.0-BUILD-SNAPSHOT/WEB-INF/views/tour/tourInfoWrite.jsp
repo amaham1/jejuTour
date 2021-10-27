@@ -5,11 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
-
     <script type="text/javascript" src="<c:url value='/resources/js/tour/tourInfoWrite.js'/>"></script>
 </head>
 <body>
     <form id="TourInfoWrite" name="TourInfoWrite" method="post">
+<<<<<<< HEAD
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
         <input type="text" name="alltag" id="alltag" /><p>alltag</p>
@@ -23,6 +23,10 @@
         <input type="text" name="phoneno" id="phoneno" /><p>phoneno</p>
         <input type="text" name="imgpath" id="imgpath"/><p>imgpath</p>
         <input type="text" name="thumbnailpath" id="thumbnailpath" /><p>thumbnailpath</p>
+=======
+        <input type="text" name="tour_place_name" id="tour_place_name" />
+        <input type="text" name="tour_place_explanation" id="tour_place_explanation"/>
+>>>>>>> de54ae64cf77d7913c280442b4b270f1df1852da
     </form>
     <button id="save">저장</button>
 </body>

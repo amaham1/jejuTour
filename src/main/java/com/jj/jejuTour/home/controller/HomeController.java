@@ -1,6 +1,6 @@
 package com.jj.jejuTour.home.controller;
 
-import com.jj.jejuTour.Login.controller.LoginController;
+import com.jj.jejuTour.login.controller.LoginController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;

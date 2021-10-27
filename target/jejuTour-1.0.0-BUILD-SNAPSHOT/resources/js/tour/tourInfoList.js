@@ -1,30 +1,44 @@
 $(document).ready(function () {
-    $.fn.cmsDataTable = function (init) {
-        var setting = {
-            "filter" : false,
-            "lengthChange" : true,
-            "paging" : true,
-            "pagingType" : "full_numbers",
-            "language" : {
-                "emptyTable": "검색결과가 없습니다.",
-                "lengthMenu" : "_MENU_ 개 보기",
-            },
-            "bLengthChange": true, // n개씩보기
-            "lengthMenu" : [ [10, 20, 30], [10, 20, 30] ], // 10/20/30 개씩보기
-            "order": [[ 0, "desc" ]],
-            "searching" : false,
-        };
-        var val = $.extend(true, setting, init);
-        //$.extend(val.language, setting.language , init.language);
-        return $(this).DataTable(val);
-    };
+    var header = $("meta[name='_csrf_header']").attr("content");
+    var token = $("meta[name='_csrf']").attr("content");
 
-    $('#dataTbl').cmsDataTable({
-        columnDefs: [
-            { orderable: false, className: 'not-sort', targets: 0 },
-            { orderable: false, className: '', targets: 1 },
-            { orderable: false, className: '', targets: 2 },
-        ],
+    $("#bbbtt").click(function () {
+        $table.ajax.reload();
+    })
+
+    var $table = $("#d_table").DataTable({
+        "serverSide" : true
+        , "processing": true
+        , "filter" : false
+        , "lengthChange" : true
+        , "paging" : true
+        , "pagingType" : "full_numbers"
+        , "language" : {
+            "emptyTable" : "결과가 없습니다"
+            , "lengthMent" : "_MENU_개 보기"
+        }
+        , "bLengthChange" : true
+        , "lengthMenu" : [ [10, 20, 30], [10, 20, 30] ]
+        , "order" : [[ 0, "desc" ]]
+        , "searching" : false
+        , "ajax" : {
+            url: "./ajax/tourInfoList"
+            , type: "POST"
+            , beforeSend: function(xhr){
+                    xhr.setRequestHeader(header, token);}
+            , dataSrc : function(res) {
+                return res.data;
+            }
+        }
+        , "columns" : [
+            { "data": "rownum"}
+            , { "data": "title"}
+            , { "data": "address"}
+            , { "data": "introduction"}
+            , { "data": "phoneno"}
+            , { "data": "create_dt"}
+            , { "data": "update_dt"}
+        ]
     });
-    
-})
+
+});
